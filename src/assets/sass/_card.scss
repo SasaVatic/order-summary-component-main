@@ -1,0 +1,152 @@
+@use 'media-queries' as mq;
+
+.card {
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+  animation: animate-card 2s ease;
+
+  @include mq.mobile {
+    max-width: 325px;
+    border-radius: 17px;
+  }
+
+  @include mq.desktop {
+    max-width: 450px;
+    border-radius: 20px;
+  }
+
+  &__body {
+    @include mq.mobile {
+      padding: 33px 23px 21px;
+    }
+
+    @include mq.desktop {
+      padding: 45px 49px 39px;
+    }
+  }
+
+  &__title,
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 900;
+
+    @include mq.mobile {
+      font-size: 22px;
+    }
+
+    @include mq.desktop {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    color: var(--desaturated-blue);
+
+    @include mq.mobile {
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 15px;
+    }
+
+    @include mq.desktop {
+      font-size: 16px;
+      line-height: 1.65;
+      padding: 16px 25px 10px;
+    }
+  }
+
+  &__plan-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--very-pale-blue);
+    border-radius: 10px;
+    margin-top: 8px;
+
+    @include mq.mobile {
+      margin-bottom: 23px;
+      padding: 17px 16px;
+    }
+
+    @include mq.desktop {
+      margin-bottom: 31px;
+      padding: 25px 24px;
+    }
+  }
+
+  &__price-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__price-text {
+    color: var(--dark-blue);
+    font-weight: 900;
+
+    @include mq.mobile {
+      font-size: 14px;
+      margin-left: 20px;
+    }
+
+    @include mq.desktop {
+      font-size: 16px;
+      margin-left: 20px;
+    }
+
+    span {
+      display: block;
+      color: var(--desaturated-blue);
+      font-weight: 500;
+
+      @include mq.mobile {
+        margin-top: 4px;
+      }
+
+      @include mq.desktop {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--bright-blue);
+    font-weight: 700;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+
+    @include mq.mobile {
+      font-size: 13px;
+    }
+
+    @include mq.desktop {
+      font-size: 14px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: var(--blue-hover);
+    }
+  }
+}
+
+@keyframes animate-card {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5) rotate(calc(360deg * 4));
+  }
+
+  100% {
+    transform: scale(1) rotate(calc(360deg * 4));
+  }
+}

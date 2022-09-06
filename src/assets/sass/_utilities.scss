@@ -1,0 +1,11 @@
+@use './media-queries' as mq;
+
+.u-btn-m-t {
+  @include mq.mobile {
+    margin-top: 14px;
+  }
+
+  @include mq.desktop {
+    margin-top: 22px;
+  }
+}

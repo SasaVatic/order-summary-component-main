@@ -1,0 +1,86 @@
+@use 'media-queries' as mq;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: var(--pale-blue);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @include mq.mobile {
+      background: no-repeat url('../images/pattern-background-mobile.svg');
+      background-size: 100% auto;
+    }
+
+    @include mq.desktop {
+      background: no-repeat url('../images/pattern-background-desktop.svg');
+      background-size: 100% auto;
+    }
+  }
+}
+
+main {
+  @include mq.mobile {
+    padding: 71px 25px 0;
+  }
+
+  @include mq.desktop {
+    padding: 102px 25px 0;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.attribution {
+  text-align: center;
+  padding: 10px;
+  -webkit-text-stroke: 1px #000;
+  color: transparent;
+
+  @include mq.mobile {
+    font-size: 16px;
+  }
+
+  @include mq.desktop {
+    font-size: 18px;
+  }
+
+  &__link {
+    -webkit-text-stroke: 1px var(--bright-blue);
+    color: transparent;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--bright-blue);
+    }
+
+    @include mq.mobile {
+      font-size: 18px;
+    }
+
+    @include mq.desktop {
+      font-size: 20px;
+    }
+  }
+}

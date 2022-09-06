@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+@mixin mobile() {
+  @media (min-width: map-get(v.$breakpoints, mobile)) and (max-width: map-get(v.$breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: map-get(v.$breakpoints, desktop)) {
+    @content;
+  }
+}

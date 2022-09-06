@@ -1,0 +1,328 @@
+:root {
+  --pale-blue: hsl(225deg 100% 94%);
+  --bright-blue: hsl(245deg 75% 52%);
+  --very-pale-blue: hsl(225deg 100% 98%);
+  --desaturated-blue: hsl(224deg 23% 55%);
+  --dark-blue: hsl(223deg 47% 23%);
+  --blue-hover: hsl(245deg 83% 68%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: var(--pale-blue);
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  body::after {
+    background: no-repeat url("../images/pattern-background-mobile.svg");
+    background-size: 100% auto;
+  }
+}
+@media (min-width: 1440px) {
+  body::after {
+    background: no-repeat url("../images/pattern-background-desktop.svg");
+    background-size: 100% auto;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1440px) {
+  main {
+    padding: 71px 25px 0;
+  }
+}
+@media (min-width: 1440px) {
+  main {
+    padding: 102px 25px 0;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.attribution {
+  text-align: center;
+  padding: 10px;
+  -webkit-text-stroke: 1px #000;
+  color: transparent;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .attribution {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  .attribution {
+    font-size: 18px;
+  }
+}
+.attribution__link {
+  -webkit-text-stroke: 1px var(--bright-blue);
+  color: transparent;
+  transition: color 0.3s ease;
+}
+.attribution__link:hover {
+  color: var(--bright-blue);
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .attribution__link {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .attribution__link {
+    font-size: 20px;
+  }
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("../fonts/RedHatDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("../fonts/RedHatDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("../fonts/RedHatDisplay-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+body {
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+.card {
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+  animation: animate-card 2s ease;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card {
+    max-width: 325px;
+    border-radius: 17px;
+  }
+}
+@media (min-width: 1440px) {
+  .card {
+    max-width: 450px;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__body {
+    padding: 33px 23px 21px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__body {
+    padding: 45px 49px 39px;
+  }
+}
+.card__title, .card__text {
+  text-align: center;
+}
+.card__title {
+  font-weight: 900;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__title {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__title {
+    font-size: 28px;
+  }
+}
+.card__text {
+  font-weight: 500;
+  color: var(--desaturated-blue);
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__text {
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__text {
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 16px 25px 10px;
+  }
+}
+.card__plan-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--very-pale-blue);
+  border-radius: 10px;
+  margin-top: 8px;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__plan-box {
+    margin-bottom: 23px;
+    padding: 17px 16px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__plan-box {
+    margin-bottom: 31px;
+    padding: 25px 24px;
+  }
+}
+.card__price-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.card__price-text {
+  color: var(--dark-blue);
+  font-weight: 900;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__price-text {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__price-text {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+}
+.card__price-text span {
+  display: block;
+  color: var(--desaturated-blue);
+  font-weight: 500;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__price-text span {
+    margin-top: 4px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__price-text span {
+    margin-top: 7px;
+  }
+}
+.card__link:link, .card__link:visited {
+  color: var(--bright-blue);
+  font-weight: 700;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+@media (min-width: 0) and (max-width: 1440px) {
+  .card__link:link, .card__link:visited {
+    font-size: 13px;
+  }
+}
+@media (min-width: 1440px) {
+  .card__link:link, .card__link:visited {
+    font-size: 14px;
+  }
+}
+.card__link:link:hover, .card__link:visited:hover {
+  text-decoration: none;
+  color: var(--blue-hover);
+}
+
+@keyframes animate-card {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5) rotate(1440deg);
+  }
+  100% {
+    transform: scale(1) rotate(1440deg);
+  }
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn--link, .btn--abort {
+  font-weight: 700;
+  width: 100%;
+}
+.btn--link {
+  font-size: 15.5px;
+  color: var(--very-pale-blue);
+  background-color: var(--bright-blue);
+  border-radius: 10px;
+  padding: 15px 10px;
+  transition: all 0.3s ease;
+}
+.btn--link:hover {
+  background-color: var(--blue-hover);
+  box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+.btn--link:active {
+  box-shadow: none;
+  transform: scale(1);
+}
+.btn--abort {
+  font-size: 15px;
+  font-weight: 900;
+  padding: 10px;
+  color: var(--desaturated-blue);
+  transition: color 0.3s ease;
+}
+.btn--abort:hover {
+  color: var(--dark-blue);
+}
+
+@media (min-width: 0) and (max-width: 1440px) {
+  .u-btn-m-t {
+    margin-top: 14px;
+  }
+}
+@media (min-width: 1440px) {
+  .u-btn-m-t {
+    margin-top: 22px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
